@@ -1,5 +1,6 @@
 package evgeniy.html.analyzer.statistic;
 
+import evgeniy.html.analyzer.statistic.stat.HtmlStatistics;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Optional;
@@ -13,17 +14,17 @@ public class EmptyHtmlStatistics implements HtmlStatistics {
     }
 
     @Override
-    public @NotNull String getUrl() {
+    public @NotNull String getDatasourceUrl() {
         return "";
     }
 
     @Override
-    public @NotNull Stream<WordStatistics> words() {
+    public @NotNull Stream<CountedWord> words() {
         return Stream.empty();
     }
 
     @Override
-    public @NotNull Optional<WordStatistics> getFor(@NotNull String word) {
+    public @NotNull Optional<CountedWord> getFor(@NotNull String word) {
         return Optional.empty();
     }
 

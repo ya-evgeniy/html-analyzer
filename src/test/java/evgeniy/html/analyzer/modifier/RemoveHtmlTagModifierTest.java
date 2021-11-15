@@ -21,11 +21,11 @@ class RemoveHtmlTagModifierTest {
 
         assertEquals(
                 """
-                        
+                        \s
                             123
-                            321
-                            var a = 123
-                        
+                            \s321\s
+                            \svar a = 123\s
+                        \s
                         """,
                 modifier.apply("""
                         <div id = "123"
@@ -44,11 +44,11 @@ class RemoveHtmlTagModifierTest {
 
         assertEquals(
                 """
-                        
+                        \s
                             123
                             <h1>321</h1>
                             <script>var a = 123</script>
-                        
+                        \s
                         """,
                 modifier.apply("""
                         <div id = "123"
@@ -71,7 +71,7 @@ class RemoveHtmlTagModifierTest {
                              class = "123">
                             123
                             <h1>321</h1>
-                        \s\s\s\s
+                        \s\s\s\s\s
                         </div>
                         """,
                 modifier.apply("""

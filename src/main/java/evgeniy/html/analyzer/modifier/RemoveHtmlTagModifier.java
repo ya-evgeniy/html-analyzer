@@ -13,34 +13,18 @@ public class RemoveHtmlTagModifier implements StringModifier {
 
     private @Nullable("lazy initialization") Pattern pattern;
 
-    /**
-     *
-     */
     public RemoveHtmlTagModifier() {
         this(false);
     }
 
-    /**
-     *
-     * @param cleanBody
-     */
     public RemoveHtmlTagModifier(boolean cleanBody) {
         this("", cleanBody);
     }
 
-    /**
-     *
-     * @param tag
-     */
     public RemoveHtmlTagModifier(@NotNull String tag) {
         this(tag, false);
     }
 
-    /**
-     *
-     * @param tag
-     * @param cleanBody
-     */
     public RemoveHtmlTagModifier(@NotNull String tag, boolean cleanBody) {
         this.tag = Objects.requireNonNull(tag, "tag must not be null");
         this.cleanBody = cleanBody;
@@ -59,7 +43,7 @@ public class RemoveHtmlTagModifier implements StringModifier {
             }
         }
 
-        return pattern.matcher(input).replaceAll("");
+        return pattern.matcher(input).replaceAll(" ");
     }
 
     public String getTag() {

@@ -12,7 +12,7 @@ public class RemoveHtmlUnicodeModifier implements StringModifier {
     @Override
     public @NotNull String apply(@NotNull String input) {
         Objects.requireNonNull(input, "input must not be null");
-        return pattern.matcher(input).replaceAll("");
+        return pattern.matcher(input).replaceAll(" ");
     }
 
 }

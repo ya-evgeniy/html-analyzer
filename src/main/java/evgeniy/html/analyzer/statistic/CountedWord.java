@@ -2,7 +2,7 @@ package evgeniy.html.analyzer.statistic;
 
 import org.jetbrains.annotations.NotNull;
 
-public interface WordStatistics extends Comparable<WordStatistics> {
+public interface CountedWord extends Comparable<CountedWord> {
 
     @NotNull String getWord();
 

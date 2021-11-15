@@ -22,9 +22,9 @@ class RemoveHtmlUnicodeModifierTest {
 
         assertEquals(
                 """
-                        <p></p>
-                        <div></div>
-                        <script></script>
+                        <p>\s</p>
+                        <div>\s</div>
+                        <script>\s</script>
                         """,
                 modifier.apply("""
                         <p>&spades;</p>
